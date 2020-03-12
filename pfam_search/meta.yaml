@@ -1,0 +1,26 @@
+{% set name = "pfam_search" %}
+{% set version = "0.1" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/Ecogenomics/pfam_search/archive/master.zip
+  sha256: 82b2303bb27557c48ad530a6e7778bbb285f5cdd155a0945e49c29568b4f3778
+
+build:
+  number: 0
+
+requirements:
+  run:
+    - perl
+    - hmmer >=3.0
+    - perl
+    - perl-moose
+    - perl-bioperl >=1.4
+    - perl-ipc-run
+
+test:
+  commands:
+    - pfam_search.pl -h
