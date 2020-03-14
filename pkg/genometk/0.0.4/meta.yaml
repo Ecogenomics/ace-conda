@@ -1,5 +1,5 @@
 {% set name = "GenomeTk" %}
-{% set version = "0.1.0" %}
+{% set version = "0.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3e01465ec2a3b8425495ab8c0739fb9030cf91683db6e44b5127a04775d186eb
+  sha256: 54b217a32d8581344fcdc0f6272a03865f6e4d399ba53394dc7f23b6b6330c27
 
 build:
   noarch: python
@@ -15,11 +15,11 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=2.7,<3
     - pip
   run:
-    - python >=3.6
-    - biolib >=0.1.0
+    - python >=2.7,<3
+    - biolib >=0.0.11
     - numpy >=1.8.0
     - future
     - dendropy
