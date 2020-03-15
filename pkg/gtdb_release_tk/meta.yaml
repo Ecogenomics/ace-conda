@@ -1,0 +1,38 @@
+{% set name = "gtdb_release_tk" %}
+{% set version = "0.0.4" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/Ecogenomics/gtdb-release-tk/archive/{{ version }}.tar.gz
+  sha256: e0eda067c5225d493546b1c5ea9a0af56a4b24348d692797c07f83af5500ec77
+
+build:
+  noarch: python
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - python >=3.6
+    - pip
+  run:
+    - python >=3.6
+    - biolib >=0.1.0
+    - dendropy
+    - unidecode
+    - requests
+    - matplotlib-base
+    - numpy
+    - tqdm
+
+test:
+  imports:
+    - gtdb_release_tk
+  commands:
+    - gtdb_release_tk -h
+
+about:
+  home: https://github.com/Ecogenomics/gtdb-release-tk

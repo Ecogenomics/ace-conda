@@ -17,5 +17,5 @@ https://anaconda.org/ace-channel
 `conda build pkg/pfam_search`
 
 #### 3. Upload the package
-`anaconda upload --user ace-channel /home/uqamussi_local/miniconda3/conda-bld/linux-64/pfam_search-0.1-0.tar.bz2`
+`anaconda upload --user ace-internal /home/uqamussi_local/miniconda3/conda-bld/linux-64/pfam_search-0.1-0.tar.bz2`
 
