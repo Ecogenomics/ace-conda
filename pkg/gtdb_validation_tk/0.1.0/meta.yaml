@@ -1,0 +1,36 @@
+{% set name = "gtdb_validation_tk" %}
+{% set version = "0.1.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 702677a5ca415a86e8d23188aa82c1d29cd0ed9c14eaca434454ad5629a075f8
+
+build:
+  noarch: python
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - python >=3.6
+    - pip
+  run:
+    - python >=3.6
+    - numpy >=1.8.0
+    - biolib >=0.1.0
+    - dendropy >=4.0.0
+    - fuzzywuzzy
+
+test:
+  imports:
+    - gtdb_validation_tk
+  commands:
+    - gtdb_validation_tk -h
+
+about:
+  home: https://github.com/dparks1134/GenomeTreeTk
+  summary: 'This toolkit provides functionality for validation the GTDB Taxonomy. It is primarily intended to be used by the GTDB curation team, but has been made available in case others find it useful.'
