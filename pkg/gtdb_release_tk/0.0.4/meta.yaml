@@ -36,3 +36,4 @@ test:
 
 about:
   home: https://github.com/Ecogenomics/gtdb-release-tk
+  summary: 'The GTDB Release Toolkit provides functionality for updating the GTDB to the next release and generating data files for the GTDB website.'

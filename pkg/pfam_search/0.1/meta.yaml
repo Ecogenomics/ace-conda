@@ -24,3 +24,7 @@ requirements:
 test:
   commands:
     - pfam_search.pl -h
+
+about:
+  home: https://github.com/Ecogenomics/pfam_search
+  summary: 'pfam_scan meets hmmsearch.'

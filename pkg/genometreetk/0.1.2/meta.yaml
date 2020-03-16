@@ -33,3 +33,4 @@ test:
 
 about:
   home: https://github.com/dparks1134/GenomeTreeTk
+  summary: 'The genome tree toolkit is a collection of methods for working with genome trees.'

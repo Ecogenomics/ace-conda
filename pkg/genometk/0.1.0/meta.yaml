@@ -32,3 +32,4 @@ test:
 
 about:
   home: https://github.com/dparks1134/GenomeTk
+  summary: 'The genome toolkit is a collection of methods for determining characteristics about genomes.'
