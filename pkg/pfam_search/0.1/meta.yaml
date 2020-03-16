@@ -1,27 +1,46 @@
 {% set name = "pfam_search" %}
-{% set version = "0.1" %}
+  {% set version = "0.1" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://github.com/Ecogenomics/pfam_search/archive/master.zip
+  url: https://github.com/Ecogenomics/{{ name }}/archive/master.zip
   sha256: 82b2303bb27557c48ad530a6e7778bbb285f5cdd155a0945e49c29568b4f3778
 
 build:
-  number: 0
+  noarch: generic
+  number: 2
 
 requirements:
+
+  host:
+    - perl=5.22.0
+    - perl-moose
+    - perl-bioperl >=1.4
+    - perl-ipc-run
+
   run:
-    - perl
+    - perl=5.22.0
     - hmmer >=3.0
-    - perl
     - perl-moose
     - perl-bioperl >=1.4
     - perl-ipc-run
 
 test:
+  #  imports:
+  #    - Bio::Pfam::Active_site::as_search
+  #    - Bio::Pfam::HMM::HMM
+  #    - Bio::Pfam::HMM::HMMIO
+  #    - Bio::Pfam::HMM::HMMMatch
+  #    - Bio::Pfam::HMM::HMMResults
+  #    - Bio::Pfam::HMM::HMMResultsIO
+  #    - Bio::Pfam::HMM::HMMSequence
+  #    - Bio::Pfam::HMM::HMMUnit
+  #    - Bio::Pfam::Scan::PfamScan
+  #    - Bio::Pfam::Scan::Seq
+
   commands:
     - pfam_search.pl -h
 
