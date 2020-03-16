@@ -1,5 +1,5 @@
 {% set name = "GenomeTreeTk" %}
-{% set version = "0.0.54" %}
+{% set version = "0.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,19 +7,20 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2947db56a1b8e9fd9e8d7f1f73fa75d1af67ee44ff8a058a18c70dc544d36b6b
+  sha256: e88346f9d2c1d907b15a45f6213df22bef97cc184dd6522604e216299487c337
 
 build:
   noarch: python
   number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - python >=2.7,<3
+    - python >=3.6
     - pip
   run:
-    - python >=2.7,<3
-    - biolib >=0.0.45
+    - python >=3.6
+    - biolib >=0.1.0
     - numpy >=1.8.0
     - future
     - dendropy >=4.0.0
