@@ -1,0 +1,35 @@
+{% set name = "gtdb_species_clusters" %}
+{% set version = "0.1.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/Ecogenomics/gtdb-species-clusters/archive/{{ version }}.tar.gz
+  sha256: dce23b7829abcc9f23e62fffe8f3751e387e7409baa6eda60751e625ca682386
+
+build:
+  noarch: python
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - python >=3.6
+    - pip
+  run:
+    - python >3.6
+    - numpy >=1.8.0
+    - biolib >=0.1.0
+    - dendropy >=4.0.0
+
+test:
+  imports:
+    - gtdb_species_clusters
+  commands:
+    - gtdb_species_clusters -h
+
+about:
+  home: https://github.com/Ecogenomics/gtdb-species-clusters
+  summary: 'This toolkit provides functionality for establishing, updating, and validating the species clusters used in the Genome Taxonomy Database.'
