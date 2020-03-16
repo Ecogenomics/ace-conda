@@ -3,7 +3,7 @@ ACE specific conda configuration packages.
 
 
 The following organisation has been created within anaconda as a repository for ace packages:
-https://anaconda.org/ace-channel
+https://anaconda.org/ace-internal
 
 ### Documentation
 * [Configuring the environment](doc/environment.md)
