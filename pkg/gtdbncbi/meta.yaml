@@ -1,8 +1,8 @@
 {% set name = "GTDBNCBI" %}
-{% set version = "2.3.0" %}
+{% set version = "2.3.1" %}
 
 package:
-  name: "gtdb-r95"
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
@@ -12,6 +12,7 @@ source:
 build:
   noarch: python
   number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
@@ -21,16 +22,22 @@ requirements:
     - python >=2.7,<3
     - numpy
     - psycopg2
-    - dendropy ==4.1.0
-    - biolib ==0.0.52
-    - prodigal ==2.6.3
-    - hmmer ==3.1b2
-    - fastani ==1.3
-    - fasttree ==2.1.9
-    - scipy ==0.17.1
-    - blast ==2.9.0
-    - pfam_search ==0.1
-    - genometk
+    - dendropy =4.4.0
+    - biolib =0.0.52
+    - prodigal =2.6.3
+    - hmmer =3.1b2
+    - fastani =1.3
+    - fasttree =2.1.10
+    - scipy >=0.2.1
+    - blast =2.9.0
+    - pfam_search =0.1
+    - genometk <0.1.0
+    - prokka =1.13
+    - trnascan-se =2.0
+    - requests =2.23
+    - unidecode =1.1.1
+    - matplotlib-base =2.2.4
+    - python-dateutil =2.8.1
 
 test:
   imports:
