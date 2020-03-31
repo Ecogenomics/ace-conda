@@ -1,5 +1,5 @@
 {% set name = "GTDBNCBI" %}
-{% set version = "2.3.1" %}
+{% set version = "2.3.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/Ecogenomics/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: fe251ce75dd30167f08dbc00e8c8a59cf6d788fa2b88647e9b5d9c739d197482
+  sha256: 044e7b0fff1ae45cd57a24d5725d31697c24250c51db5ca158e98df631b37679
 
 build:
   noarch: python
