@@ -1,0 +1,35 @@
+{% set name = "tax2tree" %}
+{% set version = "1.0.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/biocore/{{ name }}/archive/d1e9f9f8b9625db062339a9d99a717af04b4d342.zip
+  sha256: 093b6d314073c36e5bed090024ad7715a831fb07f1149d4da60004ea117c9ec9
+
+build:
+  noarch: python
+  number: 0
+
+requirements:
+  host:
+    - python <3
+    - pip
+  run:
+    - python <3
+    - numpy >=1.7
+    - future >=0.13.1
+    - scikit-bio
+    - click
+
+test:
+  imports:
+    - t2t
+  commands:
+    - t2t -h
+
+about:
+  home: https://github.com/biocore/tax2tree
+  summary: 'Automated taxonomy decoration onto a tree'
