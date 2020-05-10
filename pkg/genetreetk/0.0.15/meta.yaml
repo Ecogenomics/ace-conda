@@ -1,0 +1,46 @@
+{% set name = "genetreetk" %}
+{% set version = "0.0.15" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/dparks1134/GeneTreeTk/archive/e425feecc68f45209b9295c19437c262c9ed966a.zip
+  sha256: 1f45916955672d74dea8faaf745d090fdaf71a5dd855dc957e07119493123222
+
+build:
+  noarch: python
+  number: 0
+
+requirements:
+  host:
+    - python <3
+    - pip
+  run:
+    - python <3
+    - numpy >=1.8.0
+    - biolib <0.1.0
+    - dendropy >=4.0.0
+    - fasttree >=2.1.9
+    - trimal
+    - seqmagick
+    - raxml
+    - blast
+    - muscle
+    - mafft
+    - prokka
+    - matplotlib-base
+    - scipy
+    - comparem <0.1.0
+    - tax2tree
+
+test:
+  imports:
+    - genetreetk
+  commands:
+    - genetreetk -h
+
+about:
+  home: https://github.com/dparks1134/GeneTreeTk
+  summary: 'A toolbox for working with gene trees.'
