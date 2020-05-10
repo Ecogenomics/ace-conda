@@ -1,0 +1,44 @@
+{% set name = "comparem" %}
+{% set version = "0.0.25" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: edb2975f1f0b28fd4740b7ba1c1bbac916fcb855f64be8167f0126c25f586f31
+
+build:
+  noarch: python
+  number: 0
+
+requirements:
+  host:
+    - python <3
+    - pip
+  run:
+    - python <3
+    - numpy >=1.8.0
+    - scipy >=0.9.0
+    - matplotlib-base >=1.3.1
+    - biolib <0.1.0
+    - prodigal >=2.6.2
+    - diamond >=0.9.0
+
+test:
+  imports:
+    - comparem
+    - comparem.plots
+  commands:
+    - comparem -h
+
+about:
+  home: https://github.com/dparks1134/CompareM
+  license: GPL-3
+  license_family: GPL
+  summary: 'A toolbox for comparative genomics.'
+
+extra:
+  recipe-maintainers:
+    - aaronmussig
