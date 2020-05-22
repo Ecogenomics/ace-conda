@@ -1,0 +1,39 @@
+{% set name = "gtdb_validation_tk" %}
+{% set version = "0.1.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: /srv/home/uqamussi/gtdb_validation_tk-master.zip
+  sha256: 45c070abb6c0c486f4b1bbb6f2ae031d41b137ec2a5e675c25cc0be0eb2c4e89
+
+build:
+  noarch: python
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+  entry_points:
+    - gtdb_validation_tk = gtdb_validation_tk.__main__:main
+
+requirements:
+  host:
+    - python >=3.6
+    - pip
+  run:
+    - python >=3.6
+    - numpy >=1.8.0
+    - biolib >=0.1.0
+    - dendropy >=4.0.0
+    - fuzzywuzzy
+    - phylorank >=0.1.0
+
+test:
+  imports:
+    - gtdb_validation_tk
+  commands:
+    - gtdb_validation_tk -h
+
+about:
+  home: https://github.com/Ecogenomics/gtdb_validation_tk
+  summary: 'This toolkit provides functionality for validation the GTDB Taxonomy. It is primarily intended to be used by the GTDB curation team, but has been made available in case others find it useful.'
