@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/Ecogenomics/GTDBTk/archive/549b1d428a1a68f79ff8ed8330dd65ba504c06bd.zip
-  sha256: 39d2661cb92eca95fc03a6b44bb7aaaa0421358c423031ee3ee064bc5b44f7a3
+  url: https://github.com/Ecogenomics/GTDBTk/archive/fc50cfab00cfbe25873324dbb9233b2727acc997.zip
+  sha256: 575c9cd814fc6c224d5cf3a0816f8f56af97b7260b36409e1d66de60a8e23b18
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - gtdbtk = gtdbtk.__main__:main
