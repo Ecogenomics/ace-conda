@@ -1,0 +1,41 @@
+{% set name = "alignment_pruner.pl" %}
+{% set version = "aea89ef" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://raw.githubusercontent.com/novigit/davinciCode/aea89efeb15b27f82df03e4283b36afef01c210b/perl/alignment_pruner.pl
+  sha256: 40de588e0b06b69b5bece30b2ef33fb9e8b184886ab9ae64de4f4e7dd98166ae
+
+build:
+  noarch: generic
+  number: 0
+
+requirements:
+  host:
+    - perl =5.26.2
+    - perl-bioperl
+    - perl-moose
+    - perl-moosex-getopt
+    - perl-moosex-types-path-class
+    - perl-list-moreutils
+    - perl-statistics-descriptive
+    - perl-gd
+  run:
+    - perl =5.26.2
+    - perl-bioperl
+    - perl-moose
+    - perl-moosex-getopt
+    - perl-moosex-types-path-class
+    - perl-list-moreutils
+    - perl-statistics-descriptive
+    - perl-gd
+test:
+  commands:
+    - alignment_pruner.pl -h 2>&1 | grep "Prints this usage information"
+
+about:
+  home: https://github.com/novigit/davinciCode/blob/master/perl/alignment_pruner.pl
+#  summary: 'pfam_scan meets hmmsearch.'
