@@ -7,6 +7,7 @@ https://anaconda.org/ace-internal
 
 ### Documentation
 * [Configuring the environment](doc/environment.md)
+* [Managing Conda Module Files](https://wiki.ecogenomic.org/doku.php?id=managing_modulefiles_conda_environments)
 
 ### Example workflow
 
